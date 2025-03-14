@@ -24,12 +24,19 @@ export default {
     },
     handleChange (e) {
     //   console.log(e.target.value)
-      const num = +e.target.value // 转数字处理 如果是不是数组 会转成NaN
-      //   输入了不合格的文本 或 输入了负值， 回退成原来的 value 值
-      if (isNaN(num) || num < 1) {
-        e.target.value = this.value
+      const num = +e.target.value // 转数字处理 如果是不是数字 会转成NaN
+
+      console.log(num)
+      if (isNaN(num)) {
+        this.num = 1
       }
       this.$emit('input', num)
+
+      //   输入了不合格的文本 或 输入了负值， 回退成原来的 value 值
+      // if (isNaN(num) || num < 1) {
+      //   this.num = this.value
+      // }
+      // this.$emit('input', num)
     }
   }
 

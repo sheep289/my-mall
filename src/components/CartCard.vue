@@ -15,7 +15,7 @@
       <span class="store">库存 {{ data.goods_store }}</span>
       <!-- 数量 -->
       <div class="count">
-        <Count></Count>
+        <Count v-model="count"></Count>
       </div>
     </div>
   </div>
@@ -33,7 +33,20 @@ export default {
       default: () => {}
     }
   },
+  data () {
+    return {
+      count: 1
+    }
+  },
+  // created () {
+  //   this.test()
+  // },
   methods: {
+    // test () {
+    //   setInterval(() => {
+    //     console.log(this.count)
+    //   }, 3000)
+    // }
   }
 
 }
